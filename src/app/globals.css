@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* =========================================
+   CSS Variables
+========================================= */
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+
+  --primary: #0B5FFF;
+  --primary-dark: #0847C7;
+  --secondary: #FF8A00;
+  --accent: #00C2FF;
+
+  --success: #16A34A;
+  --warning: #F59E0B;
+  --danger: #DC2626;
+
+  --surface: #F8FAFC;
+  --surface-dark: #0F172A;
+
+  --border: #E2E8F0;
+
+  --radius-sm: .5rem;
+  --radius-md: .75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+
+  --shadow-sm:
+    0 2px 6px rgba(0,0,0,.05);
+
+  --shadow-md:
+    0 10px 30px rgba(15,23,42,.08);
+
+  --shadow-lg:
+    0 30px 80px rgba(15,23,42,.12);
+
+  --shadow-glow:
+    0 0 60px rgba(11,95,255,.35);
+}
+
+/* =========================================
+   Base
+========================================= */
+
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--background);
+  color:var(--foreground);
+  font-family:var(--font-body);
+  overflow-x:hidden;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family:var(--font-heading);
+  letter-spacing:-0.02em;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+a{
+  text-decoration:none;
+}
+
+section{
+  position:relative;
+}
+
+/* =========================================
+   Reusable Classes
+========================================= */
+
+.text-gradient{
+  background:linear-gradient(
+    90deg,
+    #0B5FFF,
+    #00C2FF
+  );
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.glass{
+  backdrop-filter:blur(24px);
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.shadow-glow{
+  box-shadow:var(--shadow-glow);
+}
+@keyframes marquee {
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+
+}
+
+@keyframes marquee-reverse {
+
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+
+}
+
+.animate-marquee {
+
+  animation: marquee 28s linear infinite;
+
+}
+
+.animate-marquee-reverse {
+
+  animation: marquee-reverse 32s linear infinite;
+
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
