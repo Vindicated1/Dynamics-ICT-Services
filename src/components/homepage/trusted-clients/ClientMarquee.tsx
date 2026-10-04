@@ -1,6 +1,6 @@
 "use client";
 
-import { clients } from "@/data/clients";
+import { clients } from "@/data/homepage/clients";
 
 export default function ClientMarquee() {
   const items = [...clients, ...clients];

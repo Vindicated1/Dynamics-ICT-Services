@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 import Badge from "@/components/common/Badge";
 import { PrimaryButton } from "@/components/common";
 
-import type { Service } from "@/data/services";
+import type { Service } from "@/data/homepage/services";
 
 interface SpotlightContentProps {
   service: Service;

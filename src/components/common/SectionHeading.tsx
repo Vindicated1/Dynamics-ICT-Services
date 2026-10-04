@@ -6,7 +6,9 @@ interface SectionHeadingProps {
   eyebrow?: string;
   title: string;
   description?: string;
+  subtitle?: string;
   centered?: boolean;
+  center?: boolean;
   light?: boolean;
   children?: ReactNode;
   className?: string;
@@ -17,18 +19,22 @@ export default function SectionHeading({
   eyebrow,
   title,
   description,
+  subtitle,
   centered = false,
+  center,
   light = false,
   children,
   className,
 }: SectionHeadingProps) {
   const label = badge ?? eyebrow;
+  const isCentered = centered || center;
+  const supportingText = description ?? subtitle;
 
   return (
     <div
       className={clsx(
         "relative z-10 max-w-3xl",
-        centered && "mx-auto text-center",
+        isCentered && "mx-auto text-center",
         className
       )}
     >
@@ -56,15 +62,15 @@ export default function SectionHeading({
         {title}
       </h2>
 
-      {description && (
+      {supportingText && (
         <p
           className={clsx(
             "mt-5 max-w-2xl text-base leading-7 sm:text-lg sm:leading-8",
-            centered && "mx-auto",
+            isCentered && "mx-auto",
             light ? "text-slate-300" : "text-slate-600"
           )}
         >
-          {description}
+          {supportingText}
         </p>
       )}
 

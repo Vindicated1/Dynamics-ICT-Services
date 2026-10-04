@@ -3,6 +3,7 @@ import {
   ArrowLeft,
   Mail,
 } from "lucide-react";
+import type { ContactEnquiry } from "@prisma/client";
 
 import { prisma } from "@/lib/prisma";
 
@@ -94,7 +95,7 @@ export default async function EnquiriesPage() {
                 </thead>
 
                 <tbody className="divide-y divide-slate-100">
-                  {enquiries.map((enquiry) => (
+                  {enquiries.map((enquiry: ContactEnquiry) => (
                     <tr
                       key={enquiry.id}
                       className="transition hover:bg-slate-50"
