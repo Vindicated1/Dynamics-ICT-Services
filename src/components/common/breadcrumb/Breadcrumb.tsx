@@ -1,12 +1,13 @@
-import { ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { ChevronRight, Home } from "lucide-react";
 
-import BreadcrumbItem from "./BreadcrumbItem";
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
 
 interface BreadcrumbProps {
-  items: {
-    label: string;
-    href?: string;
-  }[];
+  items: BreadcrumbItem[];
 }
 
 export default function Breadcrumb({
@@ -15,31 +16,47 @@ export default function Breadcrumb({
   return (
     <nav
       aria-label="Breadcrumb"
-      className="flex items-center gap-2 text-sm text-slate-500"
+      className="border-b border-slate-200 bg-white"
     >
-      {items.map((item, index) => {
-        const isLast = index === items.length - 1;
+      <div className="mx-auto max-w-7xl px-6 py-4 lg:px-8">
+        <ol className="flex flex-wrap items-center gap-2 text-sm">
+          {/* Home */}
+          <li className="flex items-center gap-2">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1.5 text-slate-500 transition-colors hover:text-blue-600"
+            >
+              <Home className="h-4 w-4" />
+              <span>Home</span>
+            </Link>
+          </li>
 
-        return (
-          <div
-            key={item.label}
-            className="flex items-center gap-2"
-          >
-            <BreadcrumbItem
-              label={item.label}
-              href={item.href}
-              active={isLast}
-            />
+          {items.map((item, index) => (
+            <li
+              key={`${item.label}-${index}`}
+              className="flex items-center gap-2"
+            >
+              <ChevronRight className="h-4 w-4 text-slate-400" />
 
-            {!isLast && (
-              <ChevronRight
-                size={16}
-                className="text-slate-400"
-              />
-            )}
-          </div>
-        );
-      })}
+              {item.href ? (
+                <Link
+                  href={item.href}
+                  className="text-slate-500 transition-colors hover:text-blue-600"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <span
+                  aria-current="page"
+                  className="font-medium text-slate-900"
+                >
+                  {item.label}
+                </span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </div>
     </nav>
   );
 }

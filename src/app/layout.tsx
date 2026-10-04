@@ -1,24 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
 
 import "./globals.css";
 
 import StructuredData from "@/components/common/StructuredData";
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
 import ToastProvider from "@/providers/ToastProvider";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-heading",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dynamicsictservices.com"),
@@ -148,8 +134,6 @@ export default function RootLayout({
 
       <body
         className={`
-          ${inter.variable}
-          ${poppins.variable}
           min-h-screen
           bg-white
           font-sans

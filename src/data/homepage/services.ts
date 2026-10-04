@@ -1,5 +1,4 @@
 import {
-  BadgeCheck,
   BarChart3,
   Camera,
   Cloud,
@@ -8,15 +7,13 @@ import {
   Database,
   Globe,
   Laptop,
-  LayoutDashboard,
   Network,
   ShieldCheck,
   Smartphone,
   Sun,
-  Wrench,
-  Zap,
 } from "lucide-react";
-import { LucideIcon } from "lucide-react";
+
+import type { LucideIcon } from "lucide-react";
 
 export interface Service {
   id: string;
@@ -36,6 +33,11 @@ export interface Service {
 }
 
 export const services: Service[] = [
+  /*
+   * ============================================================
+   * SOFTWARE DEVELOPMENT
+   * ============================================================
+   */
   {
     id: "software-development",
     title: "Software Development",
@@ -50,22 +52,32 @@ export const services: Service[] = [
     category: "Software",
   },
 
+  /*
+   * ============================================================
+   * WEB DEVELOPMENT
+   * ============================================================
+   */
   {
-    id: "web-design",
-    title: "Web Design",
+    id: "web-development",
+    title: "Web Development",
     shortDescription:
       "Modern, responsive and conversion-focused websites.",
     description:
       "Professional websites built for performance, SEO and business growth.",
     icon: Globe,
     image: "/images/services/web-design.jpg",
-    href: "/services/web-design",
+    href: "/services/web-development",
     color: "#06B6D4",
-    category: "Digital",
+    category: "Software",
   },
 
+  /*
+   * ============================================================
+   * MOBILE APP DEVELOPMENT
+   * ============================================================
+   */
   {
-    id: "mobile-app",
+    id: "mobile-app-development",
     title: "Mobile Applications",
     shortDescription:
       "Android and iOS business applications.",
@@ -73,11 +85,16 @@ export const services: Service[] = [
       "Cross-platform mobile solutions for modern organizations.",
     icon: Smartphone,
     image: "/images/services/mobile-app.jpg",
-    href: "/services/mobile-app",
+    href: "/services/mobile-app-development",
     color: "#8B5CF6",
     category: "Software",
   },
 
+  /*
+   * ============================================================
+   * NETWORKING
+   * ============================================================
+   */
   {
     id: "networking",
     title: "Networking",
@@ -92,6 +109,11 @@ export const services: Service[] = [
     category: "Infrastructure",
   },
 
+  /*
+   * ============================================================
+   * CYBER SECURITY
+   * ============================================================
+   */
   {
     id: "cyber-security",
     title: "Cyber Security",
@@ -106,6 +128,11 @@ export const services: Service[] = [
     category: "Security",
   },
 
+  /*
+   * ============================================================
+   * CCTV
+   * ============================================================
+   */
   {
     id: "cctv",
     title: "CCTV & Surveillance",
@@ -120,8 +147,13 @@ export const services: Service[] = [
     category: "Security",
   },
 
+  /*
+   * ============================================================
+   * SOLAR ENERGY
+   * ============================================================
+   */
   {
-    id: "solar",
+    id: "solar-energy",
     title: "Solar Energy",
     shortDescription:
       "Reliable renewable energy systems.",
@@ -129,13 +161,18 @@ export const services: Service[] = [
       "Residential and commercial solar installations with backup solutions.",
     icon: Sun,
     image: "/images/services/solar.jpg",
-    href: "/services/solar",
+    href: "/services/solar-energy",
     color: "#F59E0B",
     category: "Energy",
   },
 
+  /*
+   * ============================================================
+   * CLOUD COMPUTING
+   * ============================================================
+   */
   {
-    id: "cloud",
+    id: "cloud-computing",
     title: "Cloud Solutions",
     shortDescription:
       "Cloud migration and infrastructure services.",
@@ -143,11 +180,16 @@ export const services: Service[] = [
       "Deploy, secure and manage cloud environments for modern businesses.",
     icon: Cloud,
     image: "/images/services/cloud.jpg",
-    href: "/services/cloud",
+    href: "/services/cloud-computing",
     color: "#0EA5E9",
     category: "Infrastructure",
   },
 
+  /*
+   * ============================================================
+   * DIGITAL MARKETING
+   * ============================================================
+   */
   {
     id: "digital-marketing",
     title: "Digital Marketing",
@@ -162,6 +204,11 @@ export const services: Service[] = [
     category: "Digital",
   },
 
+  /*
+   * ============================================================
+   * IT SUPPORT
+   * ============================================================
+   */
   {
     id: "it-support",
     title: "IT Support",
@@ -176,6 +223,11 @@ export const services: Service[] = [
     category: "Infrastructure",
   },
 
+  /*
+   * ============================================================
+   * DATABASE SOLUTIONS
+   * ============================================================
+   */
   {
     id: "database",
     title: "Database Solutions",
@@ -190,6 +242,11 @@ export const services: Service[] = [
     category: "Software",
   },
 
+  /*
+   * ============================================================
+   * AUTOMATION
+   * ============================================================
+   */
   {
     id: "automation",
     title: "Automation & Smart Systems",

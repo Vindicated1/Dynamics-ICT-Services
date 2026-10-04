@@ -1,23 +1,16 @@
-import {
-  Code2,
-  Globe,
-  Smartphone,
-  Network,
-  ShieldCheck,
-  Camera,
-  Sun,
-  Cloud,
-  Database,
-  Bot,
-  Megaphone,
-  Headphones,
-} from "lucide-react";
+export interface Service {
+  slug: string;
+  title: string;
+  icon: string;
+  description: string;
+  features: string[];
+}
 
-export const services = [
+export const services: Service[] = [
   {
     slug: "software-development",
     title: "Software Development",
-    icon: Code2,
+    icon: "Code2",
     description:
       "Custom software engineered to automate processes and improve productivity.",
     features: [
@@ -31,7 +24,7 @@ export const services = [
   {
     slug: "web-development",
     title: "Web Development",
-    icon: Globe,
+    icon: "Globe",
     description:
       "Modern, responsive websites and enterprise web applications.",
     features: [
@@ -45,7 +38,7 @@ export const services = [
   {
     slug: "mobile-app-development",
     title: "Mobile Apps",
-    icon: Smartphone,
+    icon: "Smartphone",
     description:
       "Cross-platform Android and iOS applications with outstanding user experience.",
     features: [
@@ -59,7 +52,7 @@ export const services = [
   {
     slug: "networking",
     title: "Networking",
-    icon: Network,
+    icon: "Network",
     description:
       "Enterprise-grade wired and wireless network infrastructure.",
     features: [
@@ -73,7 +66,7 @@ export const services = [
   {
     slug: "cyber-security",
     title: "Cyber Security",
-    icon: ShieldCheck,
+    icon: "ShieldCheck",
     description:
       "Protecting businesses from cyber threats using modern security solutions.",
     features: [
@@ -87,7 +80,7 @@ export const services = [
   {
     slug: "cctv",
     title: "CCTV Surveillance",
-    icon: Camera,
+    icon: "Camera",
     description:
       "Intelligent surveillance systems for homes, businesses and industries.",
     features: [
@@ -101,7 +94,7 @@ export const services = [
   {
     slug: "solar-energy",
     title: "Solar Energy",
-    icon: Sun,
+    icon: "Sun",
     description:
       "Reliable renewable energy solutions for uninterrupted operations.",
     features: [
@@ -115,7 +108,7 @@ export const services = [
   {
     slug: "cloud-computing",
     title: "Cloud Solutions",
-    icon: Cloud,
+    icon: "Cloud",
     description:
       "Cloud migration, hosting and infrastructure management.",
     features: [
@@ -129,7 +122,7 @@ export const services = [
   {
     slug: "database",
     title: "Database Solutions",
-    icon: Database,
+    icon: "Database",
     description:
       "Secure, scalable and high-performance database systems.",
     features: [
@@ -143,7 +136,7 @@ export const services = [
   {
     slug: "automation",
     title: "Automation",
-    icon: Bot,
+    icon: "Bot",
     description:
       "Smart automation systems that improve operational efficiency.",
     features: [
@@ -157,7 +150,7 @@ export const services = [
   {
     slug: "digital-marketing",
     title: "Digital Marketing",
-    icon: Megaphone,
+    icon: "Megaphone",
     description:
       "Helping businesses grow through digital marketing strategies.",
     features: [
@@ -171,7 +164,7 @@ export const services = [
   {
     slug: "it-support",
     title: "IT Support",
-    icon: Headphones,
+    icon: "Headphones",
     description:
       "Reliable technical support and managed IT services.",
     features: [

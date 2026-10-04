@@ -1,5 +1,5 @@
 import Container from "@/components/common/Container";
-import { Button } from "@/components/ui/Button";
+import Button from "@/components/ui/Button";
 
 export default function Hero() {
   return (
@@ -7,7 +7,7 @@ export default function Hero() {
       <Container>
 
         <span className="rounded-full bg-blue-700 px-4 py-2 text-sm">
-          Nigeria's Trusted Technology Partner
+          Nigeria&apos;s Trusted Technology Partner
         </span>
 
         <h1 className="mt-8 max-w-4xl text-6xl font-extrabold leading-tight">

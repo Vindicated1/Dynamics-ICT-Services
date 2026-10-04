@@ -2,7 +2,12 @@
 
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import type { FAQItem as FAQItemType } from "@/data/faq";
+
+type FAQItemType = {
+  category: string;
+  question: string;
+  answer: string;
+};
 
 interface Props {
   item: FAQItemType;

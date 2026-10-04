@@ -1,16 +1,16 @@
 /* Layout */
 export { default as Container } from "./Container";
-export { default as MaxWidth } from "./MaxWidth";
+// export { default as MaxWidth } from "./MaxWidth";
 export { default as PageLayout } from "./PageLayout";
 export { default as Section } from "./Section";
 export { default as SectionHeading } from "./SectionHeading";
 
 /* Navigation */
-export { default as Breadcrumb } from "./Breadcrumb";
+export { default as Breadcrumb } from "./breadcrumb/Breadcrumb";
 
+export { default as BreadcrumbSchema } from "./breadcrumb/BreadcrumbSchema";
 /* Buttons */
 export { default as PrimaryButton } from "./PrimaryButton";
-export { default as SecondaryButton } from "./SecondaryButton";
 
 /* Common UI */
 export { default as Badge } from "./Badge";
@@ -19,7 +19,7 @@ export { default as StatCard } from "./StatCard";
 
 /* Animations */
 export { default as FadeIn } from "./FadeIn";
-export { default as AnimatedSection } from "./AnimatedSection";
+// export { default as AnimatedSection } from "./AnimatedSection";
 
 /* SEO */
 export { default as StructuredData } from "./StructuredData";

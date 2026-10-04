@@ -138,9 +138,11 @@ export default async function SolutionPage({
           overview={featured.overview}
         />
 
-        <SuccessMetrics
-          metrics={featured.metrics}
-        />
+        {"metrics" in featured && (
+          <SuccessMetrics
+            metrics={featured.metrics as { value: string; label: string }[]}
+          />
+        )}
 
         <ServiceFeatures
           features={featured.features}

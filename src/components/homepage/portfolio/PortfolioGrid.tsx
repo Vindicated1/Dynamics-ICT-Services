@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import type { PortfolioProject } from "@/data/portfolio";
+import type { PortfolioProject } from "@/data/homepage/portfolio";
 import PortfolioCard from "./PortfolioCard";
 
 interface Props {

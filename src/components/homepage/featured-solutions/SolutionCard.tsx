@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 import SolutionBenefits from "./SolutionBenefits";
-import type { FeaturedSolution } from "@/data/featuredSolutions";
+import type { FeaturedSolution } from "@/data/homepage/featuredSolutions";
 
 interface SolutionCardProps {
   solution: FeaturedSolution;

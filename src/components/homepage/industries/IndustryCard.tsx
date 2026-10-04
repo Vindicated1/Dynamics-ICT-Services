@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-import type { Industry } from "@/data/industries";
+import type { Industry } from "@/data/homepage/industries";
 
 interface Props {
   industry: Industry;

@@ -3,7 +3,7 @@ import Section from "@/components/common/Section";
 import SectionHeading from "@/components/common/SectionHeading";
 import ServiceCard from "./ServiceCard";
 
-import { services } from "@/data/services";
+import { services } from "@/data/services/services";
 
 export default function Services() {
   return (
@@ -12,8 +12,8 @@ export default function Services() {
         <SectionHeading
           badge="Our Services"
           title="Technology Solutions That Drive Growth"
-          subtitle="We provide end-to-end ICT, energy, and security solutions tailored to your needs."
-          center
+          // subtitle="We provide end-to-end ICT, energy, and security solutions tailored to your needs."
+          // center={true}
         />
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">

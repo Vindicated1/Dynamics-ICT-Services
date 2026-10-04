@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-import type { PortfolioProject } from "@/data/portfolio";
+import type { PortfolioProject } from "@/data/homepage/portfolio";
 
 interface Props {
   project: PortfolioProject;

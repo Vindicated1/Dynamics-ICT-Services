@@ -1,5 +1,5 @@
 import Container from "@/components/common/Container";
-import Breadcrumb from "@/components/common/Breadcrumb";
+import Breadcrumb from "@/components/common/breadcrumb/Breadcrumb";
 
 interface FeaturedSolutionHeroProps {
   title: string;
@@ -21,10 +21,6 @@ export default function FeaturedSolutionHero({
       <Container className="relative z-10">
         <Breadcrumb
           items={[
-            {
-              label: "Home",
-              href: "/",
-            },
             {
               label: "Solutions",
               href: "/solutions",

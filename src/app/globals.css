@@ -7,6 +7,8 @@
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
+  --font-body: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: Poppins, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   --primary: #0B5FFF;
   --primary-dark: #0847C7;

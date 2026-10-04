@@ -1,57 +1,61 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { LucideIcon } from "lucide-react";
+import {
+  Search,
+  ClipboardList,
+  Palette,
+  Code,
+  TestTube,
+  Rocket,
+} from "lucide-react";
 
-interface ProcessCardProps {
-  step: string;
-  title: string;
-  description: string;
-  icon: LucideIcon;
-}
+import type { ProcessStep } from "@/data/services/process";
+
+const iconMap = {
+  Search,
+  ClipboardList,
+  Palette,
+  Code,
+  TestTube,
+  Rocket,
+};
+
+type ProcessCardProps = ProcessStep;
 
 export default function ProcessCard({
   step,
   title,
   description,
-  icon: Icon,
+  icon,
 }: ProcessCardProps) {
+  const Icon =
+    iconMap[icon as keyof typeof iconMap] ?? Search;
+
   return (
-    <motion.div
-      initial={{
-        opacity: 0,
-        y: 30,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-      }}
-      transition={{
-        duration: 0.5,
-      }}
-      className="relative rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-blue-200 hover:shadow-xl"
-    >
-      <span className="absolute right-6 top-6 text-5xl font-black text-slate-100">
-        {step}
-      </span>
+    <article className="group relative">
+      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg">
+        {/* Step */}
+        <div className="flex items-center justify-between">
+          <span className="text-sm font-bold tracking-wider text-blue-600">
+            {step}
+          </span>
 
-      <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-100">
-        <Icon
-          size={30}
-          className="text-blue-600"
-        />
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition-colors duration-300 group-hover:bg-blue-600 group-hover:text-white">
+            <Icon className="h-6 w-6" />
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="mt-6">
+          <h3 className="text-xl font-bold text-slate-900">
+            {title}
+          </h3>
+
+          <p className="mt-3 text-sm leading-6 text-slate-600">
+            {description}
+          </p>
+        </div>
       </div>
-
-      <h3 className="mt-8 text-2xl font-bold text-slate-900">
-        {title}
-      </h3>
-
-      <p className="mt-5 leading-7 text-slate-600">
-        {description}
-      </p>
-    </motion.div>
+    </article>
   );
 }

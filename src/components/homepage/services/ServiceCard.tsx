@@ -1,15 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 import Card from "@/components/common/Card";
-import Badge from "@/components/common/Badge";
 import ServiceIcon from "./ServiceIcon";
 
-import type { Service } from "@/data/services";
+import type { Service } from "@/data/homepage/services";
 
 interface ServiceCardProps {
   service: Service;
@@ -28,33 +26,14 @@ export default function ServiceCard({
     >
       <Card className="flex h-full flex-col overflow-hidden p-0">
 
-        {/* Top Image */}
-
-        <div className="relative h-56 overflow-hidden">
-
-          <Image
-            src={service.image}
-            alt={service.title}
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-110"
-          />
-
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent" />
-
-        </div>
-
         {/* Content */}
 
         <div className="flex flex-1 flex-col p-8">
 
-          <Badge className="w-fit">
-            {service.category}
-          </Badge>
-
           <div className="mt-6">
             <ServiceIcon
-              color={service.color}
-              icon={<Icon size={28} />}
+              icon={<Icon />}
+              color="blue"
             />
           </div>
 
@@ -63,7 +42,7 @@ export default function ServiceCard({
           </h3>
 
           <p className="mt-4 leading-7 text-slate-600">
-            {service.shortDescription}
+            {service.description}
           </p>
 
           <div className="mt-auto pt-8">

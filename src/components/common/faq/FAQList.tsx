@@ -12,8 +12,6 @@ import { faqs } from "@/data/faq";
 export default function FAQList() {
   return (
     <Accordion
-      type="single"
-      collapsible
       className="w-full"
     >
       {faqs.map((faq, index) => (

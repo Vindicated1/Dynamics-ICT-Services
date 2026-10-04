@@ -1,75 +1,63 @@
-import {
-  GraduationCap,
-  HeartPulse,
-  Landmark,
-  Factory,
-  ShoppingBag,
-  Wheat,
-  Building2,
-  Hotel,
-  Building,
-  Briefcase,
-} from "lucide-react";
+export interface Industry {
+  title: string;
+  icon: string;
+  description: string;
+}
 
-export const industries = [
+export const industries: Industry[] = [
   {
     title: "Education",
-    icon: GraduationCap,
+    icon: "GraduationCap",
     description:
-      "Smart campus networks, e-learning platforms, school management systems, and digital classrooms.",
+      "Technology solutions designed to support schools, colleges and universities with reliable ICT infrastructure and digital systems.",
   },
+
   {
     title: "Healthcare",
-    icon: HeartPulse,
+    icon: "Hospital",
     description:
-      "Hospital information systems, secure networking, surveillance, and telemedicine infrastructure.",
+      "Secure and reliable technology solutions for hospitals, medical centres and healthcare organizations.",
   },
-  {
-    title: "Finance",
-    icon: Landmark,
-    description:
-      "Secure ICT infrastructure, cybersecurity, compliance solutions, and business continuity systems.",
-  },
-  {
-    title: "Manufacturing",
-    icon: Factory,
-    description:
-      "Automation, industrial networking, CCTV surveillance, and production monitoring solutions.",
-  },
-  {
-    title: "Retail",
-    icon: ShoppingBag,
-    description:
-      "POS systems, inventory platforms, surveillance, networking, and customer engagement solutions.",
-  },
-  {
-    title: "Agriculture",
-    icon: Wheat,
-    description:
-      "Smart farming, IoT monitoring, solar-powered systems, and agricultural management platforms.",
-  },
-  {
-    title: "Real Estate",
-    icon: Building2,
-    description:
-      "Smart buildings, CCTV, access control, automation, and property management technologies.",
-  },
-  {
-    title: "Hospitality",
-    icon: Hotel,
-    description:
-      "Hotel management systems, guest Wi-Fi, surveillance, and digital customer experiences.",
-  },
+
   {
     title: "Government",
-    icon: Building,
+    icon: "Landmark",
     description:
-      "Digital transformation, enterprise networking, secure infrastructure, and e-government solutions.",
+      "ICT infrastructure, security and digital solutions for government institutions and public organizations.",
   },
+
   {
-    title: "Corporate Enterprises",
-    icon: Briefcase,
+    title: "Financial Services",
+    icon: "Building2",
     description:
-      "Enterprise software, cloud migration, cybersecurity, managed IT services, and automation.",
+      "Secure networking, cybersecurity and technology solutions for banks, financial technology companies and financial institutions.",
+  },
+
+  {
+    title: "Manufacturing",
+    icon: "Factory",
+    description:
+      "Networking, automation, monitoring and technology infrastructure for manufacturing and industrial environments.",
+  },
+
+  {
+    title: "Retail & Commerce",
+    icon: "ShoppingCart",
+    description:
+      "Technology solutions that help retailers improve operations, security, connectivity and customer experience.",
+  },
+
+  {
+    title: "Hospitality",
+    icon: "Hotel",
+    description:
+      "Technology infrastructure for hotels, resorts, event centres and hospitality businesses.",
+  },
+
+  {
+    title: "SMEs",
+    icon: "Cpu",
+    description:
+      "Affordable technology solutions that help small and growing businesses improve productivity and digital operations.",
   },
 ];

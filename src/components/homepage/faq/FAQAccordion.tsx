@@ -2,9 +2,14 @@
 
 import { useState } from "react";
 
-import type { FAQItem as FAQType } from "@/data/faq";
-
 import FAQItem from "./FAQItem";
+
+type FAQType = {
+  id: string;
+  category: string;
+  question: string;
+  answer: string;
+};
 
 interface Props {
   items: FAQType[];

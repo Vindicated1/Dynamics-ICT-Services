@@ -1,67 +1,56 @@
-import {
-  MessageSquare,
-  ClipboardList,
-  PencilRuler,
-  MonitorSmartphone,
-  Code2,
-  ShieldCheck,
-  Rocket,
-} from "lucide-react";
+export interface ProcessStep {
+  step: string;
+  title: string;
+  description: string;
+  icon: string;
+}
 
-export const processSteps = [
+export const processSteps: ProcessStep[] = [
   {
     step: "01",
-    title: "Consultation",
+    title: "Discovery",
     description:
-      "We meet with you to understand your business goals, challenges, and project requirements.",
-    icon: MessageSquare,
+      "We understand your business requirements, objectives and technical challenges.",
+    icon: "Search",
   },
 
   {
     step: "02",
-    title: "Requirements Analysis",
+    title: "Planning",
     description:
-      "Our team gathers detailed requirements and prepares a technical solution tailored to your needs.",
-    icon: ClipboardList,
+      "We develop a clear technical roadmap and implementation strategy.",
+    icon: "ClipboardList",
   },
 
   {
     step: "03",
-    title: "Planning & Architecture",
+    title: "Design",
     description:
-      "We create project plans, timelines, system architecture, and technology recommendations.",
-    icon: PencilRuler,
+      "Our team designs the solution architecture and user experience.",
+    icon: "Palette",
   },
 
   {
     step: "04",
-    title: "UI/UX Design",
+    title: "Development",
     description:
-      "Beautiful, intuitive interfaces are designed to ensure an outstanding user experience.",
-    icon: MonitorSmartphone,
+      "We build and configure the required technology solution.",
+    icon: "Code",
   },
 
   {
     step: "05",
-    title: "Development",
+    title: "Testing",
     description:
-      "Our engineers build secure, scalable, and high-performance digital solutions.",
-    icon: Code2,
+      "We test the solution for reliability, security and performance.",
+    icon: "TestTube",
   },
 
   {
     step: "06",
-    title: "Testing & Quality Assurance",
+    title: "Deployment",
     description:
-      "Every project undergoes rigorous testing to ensure quality, reliability, and security.",
-    icon: ShieldCheck,
-  },
-
-  {
-    step: "07",
-    title: "Deployment & Support",
-    description:
-      "We deploy your solution, provide training, and continue supporting your business long after launch.",
-    icon: Rocket,
+      "The completed solution is deployed and prepared for production use.",
+    icon: "Rocket",
   },
 ];

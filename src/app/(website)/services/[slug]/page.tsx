@@ -9,6 +9,8 @@ import Features from "@/components/service-details/features";
 import Benefits from "@/components/service-details/benefits";
 import Technologies from "@/components/service-details/technologies";
 import Process from "@/components/service-details/process";
+import Breadcrumb from "@/components/common/breadcrumb/Breadcrumb";
+import BreadcrumbSchema from "@/components/common/breadcrumb/BreadcrumbSchema";
 import RelatedServices from "@/components/service-details/related";
 
 import CTA from "@/components/homepage/cta";
@@ -56,6 +58,33 @@ export default async function ServicePage({
 
   return (
     <main className="min-h-screen bg-white">
+      <Breadcrumb
+        items={[
+          {
+            label: "Services",
+            href: "/services",
+          },
+          {
+            label: service.title,
+          },
+        ]}
+      />
+      <BreadcrumbSchema
+        items={[
+          {
+            name: "Home",
+            url: "https://dynamicsict.com/",
+          },
+          {
+            name: "Services",
+            url: "https://dynamicsict.com/services",
+          },
+          {
+            name: service.title,
+            url: `https://dynamicsict.com/services/${slug}`,
+          },
+        ]}
+      />
       <ServiceHero
         title={service.heroTitle}
         subtitle={service.heroSubtitle}
