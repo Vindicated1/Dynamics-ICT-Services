@@ -7,16 +7,16 @@ datasource db {
 }
 
 model ContactEnquiry {
-  id        String   @id @default(cuid())
+  id String @id @default(cuid())
 
-  name      String
-  email     String
-  phone     String?
-  company   String?
-  service   String
-  message   String
+  name    String
+  email   String
+  phone   String?
+  company String?
+  service String
+  message String
 
-  status    EnquiryStatus @default(NEW)
+  status EnquiryStatus @default(NEW)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -24,6 +24,29 @@ model ContactEnquiry {
   @@index([status])
   @@index([createdAt])
   @@index([email])
+}
+
+model AdminAccount {
+  id           String         @id @default(cuid())
+  name         String
+  email        String         @unique
+  passwordHash String
+  isActive     Boolean        @default(true)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  sessions     AdminSession[]
+}
+
+model AdminSession {
+  id             String       @id @default(cuid())
+  tokenHash      String       @unique
+  adminAccountId String
+  expiresAt      DateTime
+  createdAt      DateTime     @default(now())
+  adminAccount   AdminAccount @relation(fields: [adminAccountId], references: [id], onDelete: Cascade)
+
+  @@index([adminAccountId])
+  @@index([expiresAt])
 }
 
 enum EnquiryStatus {

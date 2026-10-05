@@ -1,5 +1,31 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Admin authentication
+
+The admin dashboard and enquiry list require an administrator account. There
+is no public sign-up page. Admin passwords are stored as scrypt hashes, and
+sign-in sessions use random, database-backed tokens in HTTP-only cookies.
+
+1. Configure `DATABASE_URL` in `.env`.
+2. Apply the database migrations:
+
+   ```bash
+   npx prisma migrate deploy
+   ```
+
+3. Create an admin account from an interactive terminal. The password is
+   entered without being echoed:
+
+   ```bash
+   npm run admin:create
+   ```
+
+4. Start the site and open `/admin/login`.
+
+Run `npm run admin:create` again to add another administrator. To revoke an
+account's access, set its `isActive` field to `false` in the database; existing
+sessions for that account will no longer authorize admin access.
+
 ## Getting Started
 
 First, run the development server:

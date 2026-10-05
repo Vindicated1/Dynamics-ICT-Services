@@ -30,9 +30,9 @@ const stats = [
     href: "/blog",
   },
   {
-    title: "Users",
-    value: "—",
-    description: "Coming with authentication",
+    title: "Admin Accounts",
+    value: "Managed",
+    description: "Provisioned securely by operations",
     icon: Users,
     href: "#",
   },
