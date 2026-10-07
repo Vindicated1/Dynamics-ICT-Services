@@ -1,6 +1,8 @@
 import "server-only";
 
 import { createHash, randomBytes } from "node:crypto";
+
+import { Prisma } from "@prisma/client";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -13,60 +15,95 @@ function hashSessionToken(token: string) {
   return createHash("sha256").update(token).digest("hex");
 }
 
+function hasAdminModels() {
+  return Boolean(prisma.adminAccount && prisma.adminSession);
+}
+
+function isDatabaseUnavailableError(error: unknown) {
+  return (
+    error instanceof Prisma.PrismaClientKnownRequestError &&
+    (error.code === "P1001" || error.code === "P1017")
+  );
+}
+
 export async function createAdminSession(adminAccountId: string) {
+  if (!hasAdminModels()) {
+    throw new Error("Admin authentication is not available because the Prisma models are not initialized.");
+  }
+
   const token = randomBytes(32).toString("base64url");
   const expiresAt = new Date(
     Date.now() + ADMIN_SESSION_DURATION_SECONDS * 1000,
   );
 
-  await prisma.adminSession.create({
-    data: {
-      tokenHash: hashSessionToken(token),
-      adminAccountId,
-      expiresAt,
-    },
-  });
+  try {
+    await prisma.adminSession.create({
+      data: {
+        tokenHash: hashSessionToken(token),
+        adminAccountId,
+        expiresAt,
+      },
+    });
+  } catch (error) {
+    if (isDatabaseUnavailableError(error)) {
+      throw new Error("The admin database is unavailable.");
+    }
+
+    throw error;
+  }
 
   return { token, expiresAt };
 }
 
 export async function getAdminSession() {
+  if (!hasAdminModels()) {
+    return null;
+  }
+
   const token = (await cookies()).get(ADMIN_SESSION_COOKIE)?.value;
 
   if (!token) {
     return null;
   }
 
-  const session = await prisma.adminSession.findUnique({
-    where: {
-      tokenHash: hashSessionToken(token),
-    },
-    select: {
-      expiresAt: true,
-      adminAccount: {
-        select: {
-          id: true,
-          name: true,
-          email: true,
-          isActive: true,
+  try {
+    const session = await prisma.adminSession.findUnique({
+      where: {
+        tokenHash: hashSessionToken(token),
+      },
+      select: {
+        expiresAt: true,
+        adminAccount: {
+          select: {
+            id: true,
+            name: true,
+            email: true,
+            isActive: true,
+          },
         },
       },
-    },
-  });
+    });
 
-  if (
-    !session ||
-    session.expiresAt <= new Date() ||
-    !session.adminAccount.isActive
-  ) {
-    return null;
+    if (
+      !session ||
+      session.expiresAt <= new Date() ||
+      !session.adminAccount.isActive
+    ) {
+      return null;
+    }
+
+    return {
+      id: session.adminAccount.id,
+      name: session.adminAccount.name,
+      email: session.adminAccount.email,
+    };
+  } catch (error) {
+    if (isDatabaseUnavailableError(error)) {
+      return null;
+    }
+
+    throw error;
   }
-
-  return {
-    id: session.adminAccount.id,
-    name: session.adminAccount.name,
-    email: session.adminAccount.email,
-  };
 }
 
 export async function requireAdmin() {

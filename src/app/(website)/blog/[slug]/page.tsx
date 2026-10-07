@@ -1,12 +1,12 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
-import { blogPosts } from "@/data/blog/posts";
-
 import { BlogArticle } from "@/components/blog";
 
 import CTA from "@/components/homepage/cta";
 import Footer from "@/components/homepage/footer";
+import { prisma } from "@/lib/prisma";
+import { toBlogPost } from "@/lib/blog-articles";
 
 interface Props {
   params: Promise<{
@@ -19,9 +19,10 @@ export async function generateMetadata({
 }: Props): Promise<Metadata> {
   const { slug } = await params;
 
-  const post = blogPosts.find(
-    (item) => item.slug === slug && item.published
-  );
+  const post = await prisma.blogArticle.findFirst({
+    where: { slug, isPublished: true },
+    select: { title: true, excerpt: true },
+  });
 
   if (!post) {
     return {};
@@ -38,13 +39,15 @@ export default async function BlogPostPage({
 }: Props) {
   const { slug } = await params;
 
-  const post = blogPosts.find(
-    (item) => item.slug === slug && item.published
-  );
+  const article = await prisma.blogArticle.findFirst({
+    where: { slug, isPublished: true },
+  });
 
-  if (!post) {
+  if (!article) {
     notFound();
   }
+
+  const post = toBlogPost(article);
 
   return (
     <main className="min-h-screen bg-white">

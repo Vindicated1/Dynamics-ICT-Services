@@ -7,38 +7,50 @@ import {
   Users,
 } from "lucide-react";
 
-const stats = [
-  {
-    title: "Contact Enquiries",
-    value: "0",
-    description: "Total enquiries received",
-    icon: Mail,
-    href: "/admin/enquiries",
-  },
-  {
-    title: "Projects",
-    value: "6",
-    description: "Projects currently listed",
-    icon: FolderKanban,
-    href: "/projects",
-  },
-  {
-    title: "Blog Posts",
-    value: "0",
-    description: "Published articles",
-    icon: FileText,
-    href: "/blog",
-  },
-  {
-    title: "Admin Accounts",
-    value: "Managed",
-    description: "Provisioned securely by operations",
-    icon: Users,
-    href: "#",
-  },
-];
+import { prisma } from "@/lib/prisma";
 
-export default function AdminDashboard() {
+export default async function AdminDashboard() {
+  const [enquiryCount, newEnquiryCount, projectCount, blogCount, adminCount] = await Promise.all([
+    prisma.contactEnquiry.count(),
+    prisma.contactEnquiry.count({ where: { status: "NEW" } }),
+    prisma.project.count({
+      where: { isPublished: true, showOnProjects: true },
+    }),
+    prisma.blogArticle.count({ where: { isPublished: true } }),
+    prisma.adminAccount.count({ where: { isActive: true } }),
+  ]);
+
+  const stats = [
+    {
+      title: "Contact Enquiries",
+      value: enquiryCount,
+      description: `${newEnquiryCount} new enquiries`,
+      icon: Mail,
+      href: "/admin/enquiries",
+    },
+    {
+      title: "Published Projects",
+      value: projectCount,
+      description: "Listed on the public Projects page",
+      icon: FolderKanban,
+      href: "/admin/projects",
+    },
+    {
+      title: "Published Blog Posts",
+      value: blogCount,
+      description: "Visible on the public blog",
+      icon: FileText,
+      href: "/admin/blog",
+    },
+    {
+      title: "Active Admin Accounts",
+      value: adminCount,
+      description: "Authorized administrators",
+      icon: Users,
+      href: "#",
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-slate-50">
       <div className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
@@ -52,7 +64,7 @@ export default function AdminDashboard() {
           </h1>
 
           <p className="mt-2 text-slate-600">
-            Manage your Dynamics ICT Services website and enquiries.
+            Manage website projects and contact enquiries.
           </p>
         </div>
 
@@ -91,30 +103,36 @@ export default function AdminDashboard() {
         </div>
 
         <section className="mt-10 rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-bold text-slate-900">
-            Quick Actions
-          </h2>
+          <h2 className="text-xl font-bold text-slate-900">Quick Actions</h2>
 
           <div className="mt-5 flex flex-wrap gap-3">
             <Link
-              href="/admin/enquiries"
+              href="/admin/projects"
               className="rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+            >
+              Manage Projects
+            </Link>
+
+            <Link
+              href="/admin/enquiries"
+              className="rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
             >
               View Enquiries
             </Link>
 
             <Link
-              href="/projects"
+              href="/admin/blog"
               className="rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
             >
-              View Projects
+              Manage Blog
             </Link>
 
             <Link
-              href="/blog"
+              href="/projects"
+              target="_blank"
               className="rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
             >
-              View Blog
+              Preview Public Projects
             </Link>
           </div>
         </section>

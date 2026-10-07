@@ -3,11 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { portfolioProjects } from "@/data/homepage/portfolio";
+import type { PortfolioProject } from "@/data/homepage/portfolio";
 
-export default function FeaturedProject() {
-  const project = portfolioProjects.find((p) => p.featured);
-
+export default function FeaturedProject({
+  project,
+}: {
+  project?: PortfolioProject;
+}) {
   if (!project) return null;
 
   return (

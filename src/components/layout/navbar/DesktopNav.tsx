@@ -1,5 +1,6 @@
 import NavLink from "./NavLink";
 import MegaMenu from "./MegaMenu";
+import { servicesMenuItems, solutionsMenuItems } from "./menu-items";
 
 export default function DesktopNav() {
   return (
@@ -8,59 +9,13 @@ export default function DesktopNav() {
 
       <NavLink href="/about">About</NavLink>
 
-      <MegaMenu
-        title="Services"
-        items={[
-          {
-            title: "Software Development",
-            href: "/services/software-development",
-          },
-          {
-            title: "Networking",
-            href: "/services/networking",
-          },
-          {
-            title: "Cybersecurity",
-            href: "/services/cyber-security",
-          },
-          {
-            title: "Cloud Computing",
-            href: "/services/cloud-computing",
-          },
-          {
-            title: "Solar Solutions",
-            href: "/services/solar-energy",
-          },
-        ]}
-      />
+      <MegaMenu title="Services" items={servicesMenuItems} />
 
-      <MegaMenu
-        title="Solutions"
-        items={[
-          {
-            title: "Education",
-            href: "/solutions/education",
-          },
-          {
-            title: "Healthcare",
-            href: "/solutions/healthcare",
-          },
-          {
-            title: "Government",
-            href: "/solutions/government",
-          },
-          {
-            title: "Manufacturing",
-            href: "/solutions/manufacturing",
-          },
-          {
-            title: "Retail",
-            href: "/solutions/retail",
-          },
-        ]}
-      />
+      <MegaMenu title="Solutions" items={solutionsMenuItems} />
 
       <NavLink href="/projects">Projects</NavLink>
+
+      <NavLink href="/portfolio">Portfolio</NavLink>
 
       <NavLink href="/blog">Blog</NavLink>
 

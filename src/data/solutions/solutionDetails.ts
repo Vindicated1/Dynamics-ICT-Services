@@ -375,6 +375,122 @@ export const solutionDetails = {
     ],
   },
 
+  corporate: {
+    heroTitle: "Corporate Technology Solutions",
+
+    heroSubtitle:
+      "Secure, scalable ICT systems that help organizations work efficiently and grow with confidence.",
+
+    overview:
+      "We help corporate organizations modernize their operations through enterprise networking, business software, cloud platforms, cybersecurity, surveillance, and reliable technical support.",
+
+    challenges: [
+      "Disconnected business systems",
+      "Cybersecurity and data-protection risks",
+      "Unreliable network infrastructure",
+      "Manual processes and reporting",
+      "Limited business continuity planning",
+    ],
+
+    recommendedServices: [
+      "Enterprise Networking",
+      "Business Software",
+      "Cybersecurity",
+      "Cloud Infrastructure",
+      "CCTV and Access Control",
+      "Managed IT Support",
+    ],
+
+    benefits: [
+      "More efficient business operations",
+      "Improved information security",
+      "Reliable connectivity",
+      "Better visibility across teams",
+      "Scalable technology infrastructure",
+    ],
+
+    process: [
+      "Business and Technology Assessment",
+      "Solution Design",
+      "Implementation",
+      "Testing and Training",
+      "Ongoing Support",
+    ],
+
+    caseStudies: [],
+
+    faqs: [
+      {
+        question: "Can you work with our existing business systems?",
+        answer:
+          "Yes. We assess your current environment and design solutions that integrate with existing systems where practical.",
+      },
+      {
+        question: "Do you provide support after implementation?",
+        answer:
+          "Yes. Ongoing maintenance and technical support can be included in the service plan.",
+      },
+    ],
+  },
+
+  technology: {
+    heroTitle: "Technology Startup Solutions",
+
+    heroSubtitle:
+      "Flexible software, cloud, and infrastructure services for technology startups building and scaling digital products.",
+
+    overview:
+      "We support technology startups with product engineering, cloud infrastructure, DevOps, cybersecurity, data platforms, and technical guidance that can scale as the business grows.",
+
+    challenges: [
+      "Scaling products and infrastructure",
+      "Limited access to specialist engineering support",
+      "Cloud cost and reliability management",
+      "Security risks in early-stage products",
+      "Integrating data and business systems",
+    ],
+
+    recommendedServices: [
+      "Custom Software Development",
+      "Cloud Computing",
+      "Database Solutions",
+      "Cybersecurity",
+      "Networking",
+      "IT Support",
+    ],
+
+    benefits: [
+      "Faster product delivery",
+      "Scalable cloud infrastructure",
+      "Improved application security",
+      "Reliable data management",
+      "Technology that can grow with the business",
+    ],
+
+    process: [
+      "Product and Infrastructure Review",
+      "Technical Roadmap",
+      "Solution Development",
+      "Security and Performance Testing",
+      "Continuous Improvement",
+    ],
+
+    caseStudies: [],
+
+    faqs: [
+      {
+        question: "Can you support an existing software product?",
+        answer:
+          "Yes. We can review an existing product and help improve its software, cloud infrastructure, security, or data systems.",
+      },
+      {
+        question: "Can the solution scale as our startup grows?",
+        answer:
+          "Yes. We design systems with staged growth in mind so capacity and features can expand with your needs.",
+      },
+    ],
+  },
+
   smes: {
     heroTitle: "SME Digital Transformation",
 

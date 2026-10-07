@@ -5,6 +5,8 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 
+import { services } from "./services";
+
 export const footerCompany = {
   name: "Dynamics ICT Services",
 
@@ -13,7 +15,7 @@ export const footerCompany = {
 
   phone: "+234 803 528 1712",
 
-  email: "info@dynamicsictservices.com",
+  email: "dynamicsictservices2017@gmail.com",
 
   address: "Ibadan, Oyo State, Nigeria",
 };
@@ -45,28 +47,10 @@ export const quickLinks = [
   },
 ];
 
-export const servicesLinks = [
-  {
-    label: "Software Development",
-    href: "/services/software-development",
-  },
-  {
-    label: "Networking",
-    href: "/services/networking",
-  },
-  {
-    label: "Cyber Security",
-    href: "/services/cyber-security",
-  },
-  {
-    label: "Solar Solutions",
-    href: "/services/solar-energy",
-  },
-  {
-    label: "Cloud Computing",
-    href: "/services/cloud-computing",
-  },
-];
+export const servicesLinks = services.map((service) => ({
+  label: service.title,
+  href: service.href,
+}));
 
 export const socialLinks = [
   {

@@ -17,18 +17,18 @@ export const contactInfo: ContactInfo[] = [
   {
     id: "phone",
     title: "Call Us",
-    value: "+234 XXX XXX XXXX",
+    value: "+2348035281712",
     description:
       "Speak directly with our technical and support team.",
-    href: "tel:+234XXXXXXXXXX",
+    href: "tel:+2348035281712",
   },
   {
     id: "email",
     title: "Email Us",
-    value: "info@dynamicsictservices.com",
+    value: "dynamicsictservices2017@gmail.com",
     description:
       "Send us your enquiry and our team will get back to you.",
-    href: "mailto:info@dynamicsictservices.com",
+    href: "mailto:dynamicsictservices2017@gmail.com",
   },
   {
     id: "hours",

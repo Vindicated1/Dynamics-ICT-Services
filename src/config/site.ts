@@ -8,9 +8,9 @@ export const siteConfig = {
 
   logo: "/logo.png",
 
-  email: "info@dynamicsict.com",
+  email: "dynamicsictservices2017@gmail.com",
 
-  phone: "+234 XXX XXX XXXX",
+  phone: "+2348035281712",
 
   address: "Ibadan, Nigeria",
 

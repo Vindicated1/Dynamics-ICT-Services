@@ -49,6 +49,49 @@ model AdminSession {
   @@index([expiresAt])
 }
 
+model Project {
+  id             String   @id @default(cuid())
+  title          String
+  slug           String   @unique
+  category       String
+  description    String
+  image          String
+  location       String?
+  year           String?
+  services       String[]
+  isPublished    Boolean  @default(true)
+  showOnProjects Boolean  @default(true)
+  showOnHomepage Boolean  @default(false)
+  isFeatured     Boolean  @default(false)
+  sortOrder      Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([isPublished, showOnProjects, sortOrder])
+  @@index([isPublished, showOnHomepage, isFeatured, sortOrder])
+}
+
+model BlogArticle {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  excerpt     String
+  content     String
+  category    String
+  tags        String[]
+  authorName  String
+  authorRole  String?
+  image       String
+  publishedAt DateTime @default(now())
+  readingTime Int      @default(1)
+  isFeatured  Boolean  @default(false)
+  isPublished Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([isPublished, isFeatured, publishedAt])
+}
+
 enum EnquiryStatus {
   NEW
   READ

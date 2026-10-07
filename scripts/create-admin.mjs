@@ -57,9 +57,14 @@ async function main() {
     throw new Error("DATABASE_URL is not defined in the environment.");
   }
 
+  const nameFromEnv = process.env.ADMIN_NAME?.trim();
+  const emailFromEnv = process.env.ADMIN_EMAIL?.trim().toLowerCase();
+  const passwordFromEnv = process.env.ADMIN_PASSWORD;
+
   const prompt = createInterface({ input: stdin, output: stdout });
-  const name = (await prompt.question("Admin name: ")).trim();
-  const email = (await prompt.question("Admin email: ")).trim().toLowerCase();
+  const name = nameFromEnv || (await prompt.question("Admin name: ")).trim();
+  const email =
+    emailFromEnv || (await prompt.question("Admin email: ")).trim().toLowerCase();
   prompt.close();
 
   if (!name || name.length > 120) {
@@ -70,16 +75,18 @@ async function main() {
     throw new Error("Enter a valid email address (maximum 254 characters).");
   }
 
-  const password = await readHidden("Password (12-128 characters): ");
+  const password = passwordFromEnv || (await readHidden("Password (12-128 characters): "));
 
   if (password.length < 12 || password.length > 128) {
     throw new Error("Admin passwords must be between 12 and 128 characters.");
   }
 
-  const confirmation = await readHidden("Confirm password: ");
+  if (!passwordFromEnv) {
+    const confirmation = await readHidden("Confirm password: ");
 
-  if (password !== confirmation) {
-    throw new Error("The passwords do not match.");
+    if (password !== confirmation) {
+      throw new Error("The passwords do not match.");
+    }
   }
 
   const passwordHash = await hashAdminPassword(password);

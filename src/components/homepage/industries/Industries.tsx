@@ -49,7 +49,7 @@ export default function Industries() {
           <div className="mt-24 rounded-[32px] bg-gradient-to-r from-slate-900 to-blue-900 p-12 text-center text-white">
 
             <h3 className="text-3xl font-bold">
-              Can't Find Your Industry?
+              Can&apos;t Find Your Industry?
             </h3>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
@@ -65,7 +65,7 @@ export default function Industries() {
               </PrimaryButton>
 
               <Link
-                href="/industries"
+                href="/solutions"
                 className="inline-flex items-center rounded-xl border border-white/30 px-6 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-slate-900"
               >
                 View All Industries

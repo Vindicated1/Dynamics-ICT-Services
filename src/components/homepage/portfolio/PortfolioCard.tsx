@@ -4,6 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import {
+  Code2,
+  Globe,
+  Network,
+  Shield,
+  Smartphone,
+  Sun,
+} from "lucide-react";
 
 import type { PortfolioProject } from "@/data/homepage/portfolio";
 
@@ -11,8 +19,18 @@ interface Props {
   project: PortfolioProject;
 }
 
+const categoryIcons = {
+  software: Code2,
+  web: Globe,
+  networking: Network,
+  security: Shield,
+  solar: Sun,
+} as const;
+
 export default function PortfolioCard({ project }: Props) {
-  const Icon = project.icon;
+  const Icon =
+    categoryIcons[project.category.toLowerCase() as keyof typeof categoryIcons] ??
+    Smartphone;
 
   return (
     <motion.article

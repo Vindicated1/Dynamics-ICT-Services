@@ -1,21 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useActionState, useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
 
 import { contactServices } from "@/data/contact/contact";
+import {
+  submitContactEnquiry,
+  type ContactFormState,
+} from "@/app/(website)/contact/actions";
 
 export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
-
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    // Temporary frontend submission.
-    // This will be replaced with the API/database submission
-    // when we build the backend and admin dashboard.
-    setSubmitted(true);
-  }
+  const [state, action, pending] = useActionState<ContactFormState, FormData>(
+    submitContactEnquiry,
+    null,
+  );
+  const [dismissedSubmissionId, setDismissedSubmissionId] = useState("");
+  const submitted =
+    state?.success && state.submissionId !== dismissedSubmissionId;
 
   if (submitted) {
     return (
@@ -37,7 +38,9 @@ export default function ContactForm() {
 
             <button
               type="button"
-              onClick={() => setSubmitted(false)}
+              onClick={() =>
+                setDismissedSubmissionId(state.submissionId ?? "")
+              }
               className="mt-6 rounded-xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
             >
               Send Another Enquiry
@@ -90,7 +93,7 @@ export default function ContactForm() {
 
           {/* Form */}
           <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form action={action} className="space-y-6">
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
                   <label
@@ -212,11 +215,18 @@ export default function ContactForm() {
 
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-blue-700 sm:w-auto"
+                disabled={pending}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-blue-700 disabled:cursor-wait disabled:opacity-60 sm:w-auto"
               >
-                Send Enquiry
+                {pending ? "Sending..." : "Send Enquiry"}
                 <Send className="h-4 w-4" />
               </button>
+
+              {state?.error && (
+                <p role="alert" className="text-sm font-medium text-red-700">
+                  {state.error}
+                </p>
+              )}
             </form>
           </div>
         </div>

@@ -25,7 +25,7 @@ export const industries: Industry[] = [
     description:
       "Enterprise ICT infrastructure, software and cybersecurity solutions.",
     icon: Building2,
-    href: "/industries/corporate",
+    href: "/solutions/corporate",
   },
   {
     id: "education",
@@ -33,7 +33,7 @@ export const industries: Industry[] = [
     description:
       "Digital learning platforms, campus networking and smart classrooms.",
     icon: GraduationCap,
-    href: "/industries/education",
+    href: "/solutions/education",
   },
   {
     id: "healthcare",
@@ -41,7 +41,7 @@ export const industries: Industry[] = [
     description:
       "Secure healthcare systems, surveillance and hospital networking.",
     icon: Hospital,
-    href: "/industries/healthcare",
+    href: "/solutions/healthcare",
   },
   {
     id: "government",
@@ -49,7 +49,7 @@ export const industries: Industry[] = [
     description:
       "Reliable ICT infrastructure and digital transformation projects.",
     icon: Landmark,
-    href: "/industries/government",
+    href: "/solutions/government",
   },
   {
     id: "manufacturing",
@@ -57,7 +57,7 @@ export const industries: Industry[] = [
     description:
       "Automation, monitoring and industrial networking solutions.",
     icon: Factory,
-    href: "/industries/manufacturing",
+    href: "/solutions/manufacturing",
   },
   {
     id: "Retail",
@@ -65,7 +65,7 @@ export const industries: Industry[] = [
     description:
       "POS systems, inventory software and customer engagement solutions.",
     icon: Store,
-    href: "/industries/retail",
+    href: "/solutions/retail",
   },
   {
     id: "hospitality",
@@ -73,7 +73,7 @@ export const industries: Industry[] = [
     description:
       "Guest Wi-Fi, security systems and hotel management technologies.",
     icon: Hotel,
-    href: "/industries/hospitality",
+    href: "/solutions/hospitality",
   },
   {
     id: "technology",
@@ -81,6 +81,6 @@ export const industries: Industry[] = [
     description:
       "Cloud infrastructure, DevOps, software engineering and AI integration.",
     icon: Cpu,
-    href: "/industries/technology",
+    href: "/solutions/technology",
   },
 ];

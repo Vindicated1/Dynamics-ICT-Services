@@ -1,10 +1,15 @@
 import SectionHeading from "@/components/common/SectionHeading";
-import { blogPosts } from "@/data/blog/posts";
+import { prisma } from "@/lib/prisma";
+import { toBlogPost } from "@/lib/blog-articles";
 
 import BlogCard from "./BlogCard";
 
-export default function BlogGrid() {
-  const publishedPosts = blogPosts.filter((post) => post.published);
+export default async function BlogGrid() {
+  const articles = await prisma.blogArticle.findMany({
+    where: { isPublished: true },
+    orderBy: [{ publishedAt: "desc" }, { createdAt: "desc" }],
+  });
+  const publishedPosts = articles.map(toBlogPost);
   const featuredPosts = publishedPosts.filter((post) => post.featured);
   const regularPosts = publishedPosts.filter((post) => !post.featured);
 

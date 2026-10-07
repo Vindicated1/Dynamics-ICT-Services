@@ -30,6 +30,40 @@ export default async function ProtectedAdminLayout({
             />
           </Link>
 
+          <nav className="mr-auto flex flex-wrap items-center gap-x-3 gap-y-2 pl-4">
+            <Link
+              href="/admin"
+              className="text-sm font-semibold text-slate-600 transition hover:text-blue-600"
+            >
+              Dashboard
+            </Link>
+            <Link
+              href="/admin/projects"
+              className="text-sm font-semibold text-slate-600 transition hover:text-blue-600"
+            >
+              Projects
+            </Link>
+            <Link
+              href="/admin/enquiries"
+              className="text-sm font-semibold text-slate-600 transition hover:text-blue-600"
+            >
+              Enquiries
+            </Link>
+            <Link
+              href="/admin/blog"
+              className="text-sm font-semibold text-slate-600 transition hover:text-blue-600"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/"
+              target="_blank"
+              className="text-sm font-semibold text-slate-600 transition hover:text-blue-600"
+            >
+              View website
+            </Link>
+          </nav>
+
           <div className="flex items-center gap-4">
             <span className="hidden text-sm text-slate-600 sm:inline">
               {admin.name}

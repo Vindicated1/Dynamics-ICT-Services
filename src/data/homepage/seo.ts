@@ -12,7 +12,7 @@ export const companyInfo = {
   description:
     "Dynamics ICT Services provides enterprise ICT solutions including software development, web development, networking, cybersecurity, CCTV installation, cloud computing, renewable energy, automation and digital transformation.",
 
-  email: "info@dynamicsictservices.com",
+  email: "dynamicsictservices2017@gmail.com",
 
   telephone: "+2348035281712",
 

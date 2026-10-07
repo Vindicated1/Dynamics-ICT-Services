@@ -21,6 +21,13 @@ export async function logoutAdmin() {
     });
   }
 
+  cookieStore.set(ADMIN_SESSION_COOKIE, "", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    path: "/admin",
+    maxAge: 0,
+  });
   cookieStore.delete(ADMIN_SESSION_COOKIE);
   redirect("/admin/login");
 }

@@ -1,45 +1,33 @@
-"use client";
-
-import { useMemo, useState } from "react";
-
 import Container from "@/components/common/Container";
 import Section from "@/components/common/Section";
+import { prisma } from "@/lib/prisma";
 
-import {
-  portfolioCategories,
-  portfolioProjects,
-} from "@/data/homepage/portfolio";
+import PortfolioContent from "./PortfolioContent";
 
-import FeaturedProject from "./FeaturedProject";
-import PortfolioFilters from "./PortfolioFilters";
-import PortfolioGrid from "./PortfolioGrid";
-import PortfolioHeader from "./PortfolioHeader";
+export default async function Portfolio() {
+  const records = await prisma.project.findMany({
+    where: {
+      isPublished: true,
+      showOnHomepage: true,
+    },
+    orderBy: [{ sortOrder: "asc" }, { createdAt: "desc" }],
+  });
 
-export default function Portfolio() {
-  const [active, setActive] = useState("All");
-
-  const projects = useMemo(() => {
-    if (active === "All") return portfolioProjects;
-
-    return portfolioProjects.filter(
-      (p) => p.category === active
-    );
-  }, [active]);
+  const projects = records.map((project) => ({
+    id: project.id,
+    title: project.title,
+    category: project.category,
+    description: project.description,
+    image: project.image,
+    href: `/portfolio/${project.slug}`,
+    technologies: project.services,
+    featured: project.isFeatured,
+  }));
 
   return (
     <Section background="gray">
       <Container>
-        <PortfolioHeader />
-
-        <FeaturedProject />
-
-        <PortfolioFilters
-          categories={portfolioCategories}
-          active={active}
-          onChange={setActive}
-        />
-
-        <PortfolioGrid projects={projects} />
+        <PortfolioContent projects={projects} />
       </Container>
     </Section>
   );
