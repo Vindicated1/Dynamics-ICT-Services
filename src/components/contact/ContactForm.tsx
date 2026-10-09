@@ -21,7 +21,7 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <section id="contact-form" className="py-24">
-        <div className="mx-auto max-w-3xl px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-3xl border border-green-200 bg-green-50 p-10 text-center">
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-600">
               <CheckCircle2 className="h-8 w-8" />
@@ -53,7 +53,7 @@ export default function ContactForm() {
 
   return (
     <section id="contact-form" className="bg-slate-50 py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           {/* Introduction */}
           <div>

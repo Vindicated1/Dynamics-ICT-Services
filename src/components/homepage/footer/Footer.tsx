@@ -16,8 +16,8 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-slate-950">
       <Container>
-        <div className="grid gap-12 py-20 lg:grid-cols-5">
-          <div className="lg:col-span-2">
+        <div className="grid gap-10 py-14 sm:grid-cols-2 sm:gap-12 sm:py-16 xl:grid-cols-5 xl:py-20">
+          <div className="min-w-0 sm:col-span-2 xl:col-span-2">
             <FooterBrand />
           </div>
 

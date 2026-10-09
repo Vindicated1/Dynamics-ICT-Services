@@ -21,7 +21,7 @@ export default function InnerPageHero({
   return (
     <Section
       background="dark"
-      className="relative overflow-hidden py-32"
+      className="relative overflow-hidden py-20 sm:py-24 lg:py-32"
     >
       <HeroBackground />
 

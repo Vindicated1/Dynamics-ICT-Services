@@ -14,7 +14,7 @@ export default function HeroButtons() {
       >
         <Link
           href="/contact"
-          className="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-4 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-blue-500/30"
+          className="group inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-5 py-4 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-blue-500/30 sm:w-auto sm:px-8"
         >
           Get Free Consultation
 
@@ -32,7 +32,7 @@ export default function HeroButtons() {
       >
         <Link
           href="/contact"
-          className="group inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white/70 px-8 py-4 text-base font-semibold text-slate-800 backdrop-blur transition-all duration-300 hover:border-blue-500 hover:bg-white"
+          className="group inline-flex w-full items-center justify-center rounded-xl border border-slate-300 bg-white/70 px-5 py-4 text-base font-semibold text-slate-800 backdrop-blur transition-all duration-300 hover:border-blue-500 hover:bg-white sm:w-auto sm:px-8"
         >
           <PhoneCall
             size={18}

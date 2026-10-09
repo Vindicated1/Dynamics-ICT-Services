@@ -33,7 +33,7 @@ export const navigation = [
 
           {
             title: "Cloud",
-            href: "/services/cloud",
+            href: "/services/cloud-computing",
             icon: Database,
             description:
               "Cloud migration & hosting",
@@ -63,18 +63,18 @@ export const navigation = [
 
           {
             title: "Mobile Apps",
-            href: "/services/mobile-apps",
+            href: "/services/mobile-app-development",
             icon: Smartphone,
             description:
               "Android & iOS development",
           },
 
           {
-            title: "UI / UX Design",
-            href: "/services/ui-ux",
+            title: "Web & UI / UX Design",
+            href: "/services/web-development",
             icon: MonitorSmartphone,
             description:
-              "Beautiful user experiences",
+              "Modern websites and user experiences",
           },
         ],
       },
@@ -85,7 +85,7 @@ export const navigation = [
         items: [
           {
             title: "Solar Energy",
-            href: "/services/solar",
+            href: "/services/solar-energy",
             icon: Sun,
             description:
               "Renewable energy systems",
@@ -101,7 +101,7 @@ export const navigation = [
 
           {
             title: "Smart Home",
-            href: "/services/smart-home",
+            href: "/services/automation",
             icon: Cpu,
             description:
               "Automation & IoT",

@@ -3,20 +3,20 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 
 export default function ContactHero() {
   return (
-    <section className="relative overflow-hidden bg-slate-950 py-24 text-white">
+    <section className="relative overflow-hidden bg-slate-950 py-16 text-white sm:py-20 lg:py-24">
       {/* Background glow */}
       <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-blue-600/20 blur-3xl" />
 
       <div className="absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-orange-500/10 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-300">
             <MessageCircle className="h-4 w-4" />
             Let's Talk Technology
           </div>
 
-          <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="mt-6 text-3xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
             Let's Build Something
             <span className="text-blue-500"> Great Together.</span>
           </h1>

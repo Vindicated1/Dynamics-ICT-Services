@@ -28,7 +28,7 @@ export default function FooterNewsletter() {
 
       <form
         onSubmit={handleSubmit}
-        className="flex overflow-hidden rounded-xl border border-slate-700"
+        className="flex min-w-0 overflow-hidden rounded-xl border border-slate-700"
       >
         <input
           type="email"
@@ -36,12 +36,12 @@ export default function FooterNewsletter() {
           placeholder="Your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="flex-1 bg-transparent px-4 py-4 text-white outline-none placeholder:text-slate-500"
+          className="min-w-0 flex-1 bg-transparent px-3 py-4 text-white outline-none placeholder:text-slate-500 sm:px-4"
         />
 
         <button
           type="submit"
-          className="bg-blue-600 px-6 transition hover:bg-blue-700"
+          className="shrink-0 bg-blue-600 px-4 transition hover:bg-blue-700 sm:px-6"
         >
           <Send size={20} className="text-white" />
         </button>

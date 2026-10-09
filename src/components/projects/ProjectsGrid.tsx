@@ -13,8 +13,8 @@ export default async function ProjectsGrid() {
   });
 
   return (
-    <section className="py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Our Work"
           title="Projects We've Delivered"

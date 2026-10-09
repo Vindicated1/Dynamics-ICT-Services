@@ -20,7 +20,7 @@ export default function ProjectDetails({
   return (
     <main className="min-h-screen bg-white">
       <section className="bg-slate-950 py-20 text-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Link
             href={backHref}
             className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 transition-colors hover:text-white"
@@ -46,7 +46,7 @@ export default function ProjectDetails({
       </section>
 
       <section className="py-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative aspect-[16/8] overflow-hidden rounded-3xl bg-slate-100">
             <Image
               src={project.image}
@@ -60,7 +60,7 @@ export default function ProjectDetails({
       </section>
 
       <section className="pb-24">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1fr_360px] lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:gap-12 sm:px-6 lg:grid-cols-[1fr_360px] lg:px-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wider text-blue-600">
               Project Overview

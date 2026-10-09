@@ -14,7 +14,7 @@ export default async function EnquiriesPage() {
 
   return (
     <main className="min-h-screen bg-slate-50">
-      <div className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
         <Link
           href="/admin"
           className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 transition hover:text-blue-600"

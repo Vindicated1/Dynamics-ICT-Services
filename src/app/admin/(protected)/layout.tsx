@@ -14,7 +14,7 @@ export default async function ProtectedAdminLayout({
   return (
     <>
       <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-4 py-4 sm:px-6 lg:px-8">
           <Link
             href="/admin"
             aria-label="Dynamics ICT Services admin dashboard"
@@ -30,7 +30,7 @@ export default async function ProtectedAdminLayout({
             />
           </Link>
 
-          <nav className="mr-auto flex flex-wrap items-center gap-x-3 gap-y-2 pl-4">
+          <nav className="order-3 flex w-full flex-wrap items-center gap-x-4 gap-y-2 border-t border-slate-100 pt-3 md:order-none md:mr-auto md:w-auto md:border-0 md:pl-2 md:pt-0">
             <Link
               href="/admin"
               className="text-sm font-semibold text-slate-600 transition hover:text-blue-600"

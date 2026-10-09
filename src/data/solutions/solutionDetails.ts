@@ -375,6 +375,65 @@ export const solutionDetails = {
     ],
   },
 
+  residential: {
+    heroTitle: "Residential Technology Solutions",
+
+    heroSubtitle:
+      "Reliable home connectivity, security, automation, and backup power designed around the way you live.",
+
+    overview:
+      "We help homeowners create safer, more connected, and energy-resilient homes with dependable networking, CCTV, access control, smart automation, and solar power solutions.",
+
+    challenges: [
+      "Unreliable home internet coverage",
+      "Limited visibility and control over home security",
+      "Power outages and high energy costs",
+      "Disconnected smart devices",
+      "Difficulty monitoring the home remotely",
+    ],
+
+    recommendedServices: [
+      "Home Networking and Wi-Fi",
+      "CCTV Surveillance",
+      "Access Control",
+      "Smart Home Automation",
+      "Residential Solar Power",
+      "IT Support",
+    ],
+
+    benefits: [
+      "Stronger home security",
+      "Reliable connectivity throughout the home",
+      "Convenient control of connected devices",
+      "More dependable backup power",
+      "Solutions that can expand over time",
+    ],
+
+    process: [
+      "Home and Requirements Assessment",
+      "Solution Design",
+      "Equipment Selection",
+      "Installation and Configuration",
+      "Testing and Handover",
+      "Ongoing Support",
+    ],
+
+    caseStudies: [],
+
+    faqs: [
+      {
+        question: "Can you add smart technology to an existing home?",
+        answer:
+          "Yes. We can assess your current home and recommend upgrades that work with your existing infrastructure where practical.",
+      },
+      {
+        question: "Can I monitor my home while away?",
+        answer:
+          "Yes. We can configure secure remote access for supported CCTV and smart-home systems.",
+      },
+    ],
+  },
+
   corporate: {
     heroTitle: "Corporate Technology Solutions",
 

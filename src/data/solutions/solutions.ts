@@ -1,6 +1,7 @@
 import {
   GraduationCap,
   Building2,
+  Home,
   Landmark,
   Hospital,
   Factory,
@@ -91,6 +92,23 @@ export const solutions = [
     industries: [
       "Factories",
       "Warehouses",
+    ],
+  },
+
+  {
+    slug: "residential",
+
+    title: "Residential Solutions",
+
+    description:
+      "Connected home networking, security, automation, and backup power solutions.",
+
+    icon: Home,
+
+    industries: [
+      "Home Networking",
+      "Smart Security",
+      "Residential Solar",
     ],
   },
 

@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(34,211,238,.08),transparent_40%)]" />
 
       <Container>
-        <div className="grid min-h-screen items-center gap-20 py-24 lg:grid-cols-2">
+        <div className="grid min-h-[calc(100svh-5rem)] items-center gap-12 py-12 sm:gap-16 sm:py-16 lg:grid-cols-2 lg:gap-20 lg:py-24">
           {/* Left */}
           <div>
             <HeroContent />

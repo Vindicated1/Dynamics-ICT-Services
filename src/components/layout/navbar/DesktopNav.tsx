@@ -4,7 +4,7 @@ import { servicesMenuItems, solutionsMenuItems } from "./menu-items";
 
 export default function DesktopNav() {
   return (
-    <nav className="hidden items-center gap-10 lg:flex">
+    <nav className="hidden items-center gap-4 lg:flex xl:gap-7">
       <NavLink href="/">Home</NavLink>
 
       <NavLink href="/about">About</NavLink>

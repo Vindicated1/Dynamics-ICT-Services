@@ -4,6 +4,7 @@ import {
   Hospital,
   Landmark,
   Factory,
+  Home,
   Store,
   Hotel,
   Cpu,
@@ -58,6 +59,14 @@ export const industries: Industry[] = [
       "Automation, monitoring and industrial networking solutions.",
     icon: Factory,
     href: "/solutions/manufacturing",
+  },
+  {
+    id: "residential",
+    title: "Residential",
+    description:
+      "Connected home networking, security, automation and backup power solutions.",
+    icon: Home,
+    href: "/solutions/residential",
   },
   {
     id: "Retail",

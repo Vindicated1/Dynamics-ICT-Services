@@ -10,7 +10,7 @@ export default function HeroContent() {
       </span>
 
       {/* Heading */}
-      <h1 className="mt-8 text-5xl font-extrabold leading-tight tracking-tight text-slate-100 lg:text-6xl">
+      <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-slate-100 sm:mt-8 sm:text-5xl lg:text-6xl">
         Smart Technology.
         <br />
         Secure Infrastructure.
@@ -19,7 +19,7 @@ export default function HeroContent() {
       </h1>
 
       {/* Description */}
-      <p className="mt-8 text-lg leading-8 text-slate-400">
+      <p className="mt-6 text-base leading-7 text-slate-400 sm:mt-8 sm:text-lg sm:leading-8">
         Dynamics ICT Services delivers innovative ICT solutions,
         enterprise networking, cybersecurity, smart automation,
         CCTV surveillance, renewable energy systems, and custom

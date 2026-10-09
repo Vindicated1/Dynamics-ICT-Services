@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 
@@ -23,19 +23,48 @@ export default function MobileNav() {
   const [open, setOpen] = useState(false);
   const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
 
+  useEffect(() => {
+    if (!open) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open]);
+
   return (
     <>
       <button
         onClick={() => setOpen(true)}
         className="lg:hidden rounded-lg p-2 transition hover:bg-slate-100"
         aria-label="Open menu"
+        aria-expanded={open}
       >
         <Menu size={28} />
       </button>
 
       {open && (
-        <div className="fixed inset-0 z-[100] bg-white">
-          <div className="flex h-20 items-center justify-between border-b px-6">
+        <div
+          id="mobile-navigation"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Site navigation"
+          className="fixed inset-0 z-[100] flex h-[100dvh] flex-col bg-white"
+        >
+          <div className="flex h-20 shrink-0 items-center justify-between border-b px-4 sm:px-6">
             <Brand />
 
             <button
@@ -47,7 +76,7 @@ export default function MobileNav() {
             </button>
           </div>
 
-          <nav className="flex max-h-[calc(100vh-5rem)] flex-col overflow-y-auto px-6 py-8">
+          <nav className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-5 sm:px-6 sm:py-8">
             {linksBeforeMenus.map((link) => (
               <Link
                 key={link.href}

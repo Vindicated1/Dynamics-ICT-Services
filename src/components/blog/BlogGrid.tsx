@@ -14,8 +14,8 @@ export default async function BlogGrid() {
   const regularPosts = publishedPosts.filter((post) => !post.featured);
 
   return (
-    <section className="py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {featuredPosts.length > 0 && (
           <>
             <SectionHeading

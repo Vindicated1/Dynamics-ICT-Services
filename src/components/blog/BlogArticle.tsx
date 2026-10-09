@@ -24,7 +24,7 @@ export default function BlogArticle({ post }: Props) {
     <article>
       {/* Article Header */}
       <section className="bg-slate-950 py-20 text-white">
-        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 transition-colors hover:text-white"
@@ -70,9 +70,9 @@ export default function BlogArticle({ post }: Props) {
 
       {/* Article Content */}
       <section className="py-16">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
-            <div className="whitespace-pre-line text-lg leading-9 text-slate-700">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-10">
+            <div className="whitespace-pre-line break-words text-base leading-8 text-slate-700 sm:text-lg sm:leading-9">
               {post.content}
             </div>
 

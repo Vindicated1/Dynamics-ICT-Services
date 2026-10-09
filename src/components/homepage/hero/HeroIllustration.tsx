@@ -56,7 +56,7 @@ export default function HeroIllustration() {
         duration: 0.9,
         ease: "easeOut",
       }}
-      className="relative flex w-full items-center justify-center"
+      className="relative flex w-full min-w-0 items-center justify-center overflow-hidden"
     >
       <motion.div
         onMouseMove={handleMouseMove}
@@ -66,25 +66,10 @@ export default function HeroIllustration() {
           rotateY: springY,
           transformPerspective: 1400,
         }}
-        className="relative"
+        className="relative h-[286px] w-[286px] sm:h-[325px] sm:w-[325px] md:h-[468px] md:w-[468px] lg:h-[650px] lg:w-[650px]"
       >
-        {/* Desktop */}
-        <div className="hidden lg:block">
+        <div className="absolute left-1/2 top-1/2 origin-center -translate-x-1/2 -translate-y-1/2 scale-[0.44] sm:scale-50 md:scale-[0.72] lg:scale-100">
           <TechNetwork />
-        </div>
-
-        {/* Tablet */}
-        <div className="hidden md:block lg:hidden">
-          <div className="scale-[0.82] origin-center">
-            <TechNetwork />
-          </div>
-        </div>
-
-        {/* Mobile */}
-        <div className="block md:hidden">
-          <div className="scale-[0.58] origin-center">
-            <TechNetwork />
-          </div>
         </div>
       </motion.div>
     </motion.div>

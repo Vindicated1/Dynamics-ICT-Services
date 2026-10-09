@@ -16,8 +16,8 @@ const iconMap = {
 
 export default function ContactInfo() {
   return (
-    <section className="py-20">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="py-14 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-wider text-blue-600">
             Get In Touch
@@ -34,7 +34,7 @@ export default function ContactInfo() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid min-w-0 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {contactInfo.map((item) => {
             const Icon =
               iconMap[item.id as keyof typeof iconMap];
@@ -49,7 +49,7 @@ export default function ContactInfo() {
                   {item.title}
                 </h3>
 
-                <p className="mt-2 font-semibold text-blue-600">
+                <p className="mt-2 break-all font-semibold text-blue-600">
                   {item.value}
                 </p>
 
@@ -64,7 +64,7 @@ export default function ContactInfo() {
                 <a
                   key={item.id}
                   href={item.href}
-                  className="block"
+                  className="block min-w-0"
                 >
                   {content}
                 </a>

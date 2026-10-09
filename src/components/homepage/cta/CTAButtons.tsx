@@ -22,11 +22,11 @@ export default function CTAButtons() {
         duration: 0.7,
         delay: 0.2,
       }}
-      className="relative z-10 mt-12 flex flex-col justify-center gap-5 sm:flex-row"
+      className="relative z-10 mt-8 flex flex-col justify-center gap-4 sm:mt-12 sm:flex-row sm:gap-5"
     >
       <Link
         href={ctaContent.primaryButton.href}
-        className="inline-flex items-center justify-center rounded-2xl bg-blue-600 px-9 py-5 text-lg font-semibold text-white shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-blue-700"
+        className="inline-flex w-full items-center justify-center rounded-2xl bg-blue-600 px-5 py-4 text-base font-semibold text-white shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-blue-700 sm:w-auto sm:px-9 sm:py-5 sm:text-lg"
       >
         {ctaContent.primaryButton.label}
 
@@ -38,7 +38,7 @@ export default function CTAButtons() {
 
       <Link
         href={ctaContent.secondaryButton.href}
-        className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-white/10 px-9 py-5 text-lg font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-blue-500 hover:bg-white hover:text-slate-900"
+        className="inline-flex w-full items-center justify-center rounded-2xl border border-white/20 bg-white/10 px-5 py-4 text-base font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-blue-500 hover:bg-white hover:text-slate-900 sm:w-auto sm:px-9 sm:py-5 sm:text-lg"
       >
         {ctaContent.secondaryButton.label}
       </Link>

@@ -21,7 +21,7 @@ export default function Section({
   return (
     <section
       className={clsx(
-        "py-20 lg:py-28",
+        "py-14 sm:py-16 lg:py-28",
 
         background === "white" &&
           "bg-white",
