@@ -82,7 +82,7 @@ export default function MobileNav() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-slate-100 py-5 text-lg font-medium text-slate-700 transition hover:text-blue-600"
+                className="block w-full border-b border-slate-100 py-4 text-lg font-medium text-slate-700 transition hover:text-blue-600"
               >
                 {link.title}
               </Link>
@@ -104,7 +104,7 @@ export default function MobileNav() {
                     onClick={() =>
                       setExpandedMenu(expanded ? null : menu.title)
                     }
-                    className="flex w-full items-center justify-between py-5 text-left text-lg font-medium text-slate-700 transition hover:text-blue-600"
+                    className="flex w-full items-center justify-between py-4 text-left text-lg font-medium text-slate-700 transition hover:text-blue-600"
                   >
                     {menu.title}
                     <ChevronDown
@@ -115,7 +115,7 @@ export default function MobileNav() {
                     />
                   </button>
                   {expanded && (
-                    <div id={menuId} className="space-y-1 pb-4 pl-4">
+                    <div id={menuId} className="space-y-1 pb-4 pl-3">
                       {menu.items.map((item, index) => (
                         <div key={item.href}>
                           {item.group !== menu.items[index - 1]?.group && (
@@ -126,7 +126,7 @@ export default function MobileNav() {
                           <Link
                             href={item.href}
                             onClick={() => setOpen(false)}
-                            className="block rounded-lg px-3 py-3 text-base text-slate-600 transition hover:bg-slate-50 hover:text-blue-600"
+                            className="block w-full rounded-lg px-3 py-3 text-left text-base leading-6 text-slate-600 transition hover:bg-slate-50 hover:text-blue-600"
                           >
                             {item.title}
                           </Link>
@@ -143,20 +143,23 @@ export default function MobileNav() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-slate-100 py-5 text-lg font-medium text-slate-700 transition hover:text-blue-600"
+                className="block w-full border-b border-slate-100 py-4 text-lg font-medium text-slate-700 transition hover:text-blue-600"
               >
                 {link.title}
               </Link>
             ))}
 
+          </nav>
+
+          <div className="shrink-0 border-t border-slate-200 bg-white p-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:px-6">
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="mt-8 rounded-full bg-blue-600 py-4 text-center font-semibold text-white hover:bg-blue-700"
+              className="block w-full rounded-full bg-blue-600 px-5 py-4 text-center font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
             >
               Get a Quote
             </Link>
-          </nav>
+          </div>
         </div>
       )}
     </>
